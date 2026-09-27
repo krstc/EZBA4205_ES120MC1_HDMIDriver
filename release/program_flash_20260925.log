@@ -1,0 +1,2016 @@
+
+****** Program Flash
+****** Program Flash v2026.1 (64-bit)
+  **** SW Build 6511674 on Tue Jun 16 13:14:43 MDT 2026
+  **** IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+  **** SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+  **** Start of session at: Fri Sep 25 11:33:51 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+
+Connected to hw_server @ tcp:localhost:3121
+
+Retrieving Flash info...
+
+Initialization done
+INFO: [Xicom 50-394] Using Legacy Flash Engine
+Using default mini u-boot image file - D:/FPGA_IDE/2026.1/Vitis/data\xicom\cfgmem\uboot\zynq_nand.bin
+BOOT_MODE REG = 0x00000000
+Downloading FSBL...
+Running FSBL...
+Finished running FSBL.
+READ: ARM_PLL_CFG (0xF8000110) = 0x000FA220
+READ: ARM_PLL_CTRL (0xF8000100) = 0x00028008
+READ: ARM_CLK_CTRL (0xF8000120) = 0x1F000200
+READ: IO_PLL_CFG (0xF8000118) = 0x000FA240
+READ: IO_PLL_CTRL (0xF8000108) = 0x00030008
+Info:  Remapping 256KB of on-chip-memory RAM memory to 0xFFFC0000.
+MASKWRITE: addr=0xF8000008, mask=0x0000FFFF, newData=0x0000DF0D
+MASKWRITE: addr=0xF8000004, mask=0x0000FFFF, newData=0x0000767B
+
+
+
+
+U-Boot 2026.01-g3af985dffae2 (May 11 2026 - 03:39:24 +0000)
+
+
+
+Model: Zynq CSE NAND Board
+
+DRAM:  ECC disabled 4 MiB
+
+WARNING: Caches not enabled
+
+Core:  7 devices, 6 uclasses, devicetree: embed
+
+NAND:  128 MiB
+
+Loading Environment from <NULL>... OK
+
+In:    dcc
+
+Out:   dcc
+
+Err:   dcc
+
+Zynq> nand info
+
+
+
+
+Device 0: nand0, sector size 128 KiB
+
+  Page size         2048 b
+
+  OOB size            64 b
+
+  Erase size      131072 b
+
+  ecc strength         1 bits
+
+  ecc step size      512 b
+
+  subpagesize        512 b
+
+  options       0x00000000
+
+  bbt options   0x00020000
+
+Zynq> Page size = 2048.
+nand info
+
+
+
+
+Device 0: nand0, sector size 128 KiB
+
+  Page size         2048 b
+
+  OOB size            64 b
+
+  Erase size      131072 b
+
+  ecc strength         1 bits
+
+  ecc step size      512 b
+
+  subpagesize        512 b
+
+  options       0x00000000
+
+  bbt options   0x00020000
+
+Zynq> Sector size = 131072.
+and info
+
+
+Performing Erase Operation...
+nand bad
+
+
+
+
+Device 0 bad blocks:
+
+Zynq> Number of bad blocks = 0
+nand erase 0 620000
+
+
+
+
+NAND erase: device 0 offset 0x0, size 0x620000
+
+
+Erasing at 0x0 --   2% complete.
+Erasing at 0x20000 --   4% complete.
+Erasing at 0x40000 --   6% complete.
+Erasing at 0x60000 --   8% complete.
+Erasing at 0x80000 --  10% complete.
+Erasing at 0xa0000 --  12% complete.
+Erasing at 0xc0000 --  14% complete.
+Erasing at 0xe0000 --  16% complete.
+Erasing at 0x100000 --  18% complete.
+Erasing at 0x120000 --  20% complete.
+Erasing at 0x140000 --  22% complete.
+Erasing at 0x160000 --  24% complete.
+Erasing at 0x180000 --  26% complete.
+Erasing at 0x1a0000 --  28% complete.
+Erasing at 0x1c0000 --  30% complete.
+Erasing at 0x1e0000 --  32% complete.
+Erasing at 0x200000 --  34% complete.
+Erasing at 0x220000 --  36% complete.
+Erasing at 0x240000 --  38% complete.
+Erasing at 0x260000 --  40% complete.
+Erasing at 0x280000 --  42% complete.
+Erasing at 0x2a0000 --  44% complete.
+Erasing at 0x2c0000 --  46% complete.
+Erasing at 0x2e0000 --  48% complete.
+Erasing at 0x300000 --  51% complete.
+Erasing at 0x320000 --  53% complete.
+Erasing at 0x340000 --  55% complete.
+Erasing at 0x360000 --  57% complete.
+Erasing at 0x380000 --  59% complete.
+Erasing at 0x3a0000 --  61% complete.
+Erasing at 0x3c0000 --  63% complete.
+Erasing at 0x3e0000 --  65% complete.
+Erasing at 0x400000 --  67% complete.
+Erasing at 0x420000 --  69% complete.
+Erasing at 0x440000 --  71% complete.
+Erasing at 0x460000 --  73% complete.
+Erasing at 0x480000 --  75% complete.
+Erasing at 0x4a0000 --  77% complete.
+Erasing at 0x4c0000 --  79% complete.
+Erasing at 0x4e0000 --  81% complete.
+Erasing at 0x500000 --  83% complete.
+Erasing at 0x520000 --  85% complete.
+Erasing at 0x540000 --  87% complete.
+Erasing at 0x560000 --  89% complete.
+Erasing at 0x580000 --  91% complete.
+Erasing at 0x5a0000 --  93% complete.
+Erasing at 0x5c0000 --  95% complete.
+Erasing at 0x5e0000 --  97% complete.
+Erasing at 0x600000 -- 100% complete.
+
+OK
+
+Zynq> Erase Operation successful.
+INFO: [Xicom 50-44] Elapsed time = 4 sec.
+Performing Program Operation...
+nand bad
+
+
+
+
+Device 0 bad blocks:
+
+Zynq> Number of bad blocks = 0
+0%...nand write 10 0 20000
+
+
+
+
+NAND write: device 0 offset 0x0, size 0x20000
+
+ 131072 bytes written: OK
+
+Zynq> nand write 10 20000 20000
+
+
+
+
+NAND write: device 0 offset 0x20000, size 0x20000
+
+ 131072 bytes written: OK
+
+Zynq> nand write 10 40000 20000
+
+
+
+
+NAND write: device 0 offset 0x40000, size 0x20000
+
+ 131072 bytes written: OK
+
+Zynq> nand write 10 60000 20000
+
+
+
+
+NAND write: device 0 offset 0x60000, size 0x20000
+
+ 131072 bytes written: OK
+
+Zynq> nand write 10 80000 20000
+
+
+
+
+NAND write: device 0 offset 0x80000, size 0x20000
+
+ 131072 bytes written: OK
+
+Zynq> nand write 10 A0000 20000
+
+
+
+
+NAND write: device 0 offset 0xa0000, size 0x20000
+
+ 131072 bytes written: OK
+
+Zynq> nand write 10 C0000 20000
+
+
+
+
+NAND write: device 0 offset 0xc0000, size 0x20000
+
+ 131072 bytes written: OK
+
+Zynq> nand write 10 E0000 20000
+
+
+
+
+NAND write: device 0 offset 0xe0000, size 0x20000
+
+ 131072 bytes written: OK
+
+Zynq> nand write 10 100000 20000
+
+
+
+
+NAND write: device 0 offset 0x100000, size 0x20000
+
+ 131072 bytes written: OK
+
+Zynq> nand write 10 120000 20000
+
+
+
+
+NAND write: device 0 offset 0x120000, size 0x20000
+
+ 131072 bytes written: OK
+
+Zynq> 10%...nand write 10 140000 20000
+
+
+
+
+NAND write: device 0 offset 0x140000, size 0x20000
+
+ 131072 bytes written: OK
+
+Zynq> nand write 10 160000 20000
+
+
+
+
+NAND write: device 0 offset 0x160000, size 0x20000
+
+ 131072 bytes written: OK
+
+Zynq> nand write 10 180000 20000
+
+
+
+
+NAND write: device 0 offset 0x180000, size 0x20000
+
+ 131072 bytes written: OK
+
+Zynq> nand write 10 1A0000 20000
+
+
+
+
+NAND write: device 0 offset 0x1a0000, size 0x20000
+
+ 131072 bytes written: OK
+
+Zynq> nand write 10 1C0000 20000
+
+
+
+
+NAND write: device 0 offset 0x1c0000, size 0x20000
+
+ 131072 bytes written: OK
+
+Zynq> nand write 10 1E0000 20000
+
+
+
+
+NAND write: device 0 offset 0x1e0000, size 0x20000
+
+ 131072 bytes written: OK
+
+Zynq> nand write 10 200000 20000
+
+
+
+
+NAND write: device 0 offset 0x200000, size 0x20000
+
+ 131072 bytes written: OK
+
+Zynq> nand write 10 220000 20000
+
+
+
+
+NAND write: device 0 offset 0x220000, size 0x20000
+
+ 131072 bytes written: OK
+
+Zynq> nand write 10 240000 20000
+
+
+
+
+NAND write: device 0 offset 0x240000, size 0x20000
+
+ 131072 bytes written: OK
+
+Zynq> nand write 10 260000 20000
+
+
+
+
+NAND write: device 0 offset 0x260000, size 0x20000
+
+ 131072 bytes written: OK
+
+Zynq> 20%...nand write 10 280000 20000
+
+
+
+
+NAND write: device 0 offset 0x280000, size 0x20000
+
+ 131072 bytes written: OK
+
+Zynq> nand write 10 2A0000 20000
+
+
+
+
+NAND write: device 0 offset 0x2a0000, size 0x20000
+
+ 131072 bytes written: OK
+
+Zynq> nand write 10 2C0000 20000
+
+
+
+
+NAND write: device 0 offset 0x2c0000, size 0x20000
+
+ 131072 bytes written: OK
+
+Zynq> nand write 10 2E0000 20000
+
+
+
+
+NAND write: device 0 offset 0x2e0000, size 0x20000
+
+ 131072 bytes written: OK
+
+Zynq> nand write 10 300000 20000
+
+
+
+
+NAND write: device 0 offset 0x300000, size 0x20000
+
+ 131072 bytes written: OK
+
+Zynq> nand write 10 320000 20000
+
+
+
+
+NAND write: device 0 offset 0x320000, size 0x20000
+
+ 131072 bytes written: OK
+
+Zynq> nand write 10 340000 20000
+
+
+
+
+NAND write: device 0 offset 0x340000, size 0x20000
+
+ 131072 bytes written: OK
+
+Zynq> nand write 10 360000 20000
+
+
+
+
+NAND write: device 0 offset 0x360000, size 0x20000
+
+ 131072 bytes written: OK
+
+Zynq> nand write 10 380000 20000
+
+
+
+
+NAND write: device 0 offset 0x380000, size 0x20000
+
+ 131072 bytes written: OK
+
+Zynq> nand write 10 3A0000 20000
+
+
+
+
+NAND write: device 0 offset 0x3a0000, size 0x20000
+
+ 131072 bytes written: OK
+
+Zynq> 30%...nand write 10 3C0000 20000
+
+
+
+
+NAND write: device 0 offset 0x3c0000, size 0x20000
+
+ 131072 bytes written: OK
+
+Zynq> nand write 10 3E0000 20000
+
+
+
+
+NAND write: device 0 offset 0x3e0000, size 0x20000
+
+ 131072 bytes written: OK
+
+Zynq> nand write 10 400000 20000
+
+
+
+
+NAND write: device 0 offset 0x400000, size 0x20000
+
+ 131072 bytes written: OK
+
+Zynq> nand write 10 420000 20000
+
+
+
+
+NAND write: device 0 offset 0x420000, size 0x20000
+
+ 131072 bytes written: OK
+
+Zynq> nand write 10 440000 20000
+
+
+
+
+NAND write: device 0 offset 0x440000, size 0x20000
+
+ 131072 bytes written: OK
+
+Zynq> nand write 10 460000 20000
+
+
+
+
+NAND write: device 0 offset 0x460000, size 0x20000
+
+ 131072 bytes written: OK
+
+Zynq> nand write 10 480000 20000
+
+
+
+
+NAND write: device 0 offset 0x480000, size 0x20000
+
+ 131072 bytes written: OK
+
+Zynq> nand write 10 4A0000 20000
+
+
+
+
+NAND write: device 0 offset 0x4a0000, size 0x20000
+
+ 131072 bytes written: OK
+
+Zynq> nand write 10 4C0000 20000
+
+
+
+
+NAND write: device 0 offset 0x4c0000, size 0x20000
+
+ 131072 bytes written: OK
+
+Zynq> 40%...nand write 10 4E0000 20000
+
+
+
+
+NAND write: device 0 offset 0x4e0000, size 0x20000
+
+ 131072 bytes written: OK
+
+Zynq> nand write 10 500000 20000
+
+
+
+
+NAND write: device 0 offset 0x500000, size 0x20000
+
+ 131072 bytes written: OK
+
+Zynq> nand write 10 520000 20000
+
+
+
+
+NAND write: device 0 offset 0x520000, size 0x20000
+
+ 131072 bytes written: OK
+
+Zynq> nand write 10 540000 20000
+
+
+
+
+NAND write: device 0 offset 0x540000, size 0x20000
+
+ 131072 bytes written: OK
+
+Zynq> nand write 10 560000 20000
+
+
+
+
+NAND write: device 0 offset 0x560000, size 0x20000
+
+ 131072 bytes written: OK
+
+Zynq> nand write 10 580000 20000
+
+
+
+
+NAND write: device 0 offset 0x580000, size 0x20000
+
+ 131072 bytes written: OK
+
+Zynq> nand write 10 5A0000 20000
+
+
+
+
+NAND write: device 0 offset 0x5a0000, size 0x20000
+
+ 131072 bytes written: OK
+
+Zynq> nand write 10 5C0000 20000
+
+
+
+
+NAND write: device 0 offset 0x5c0000, size 0x20000
+
+ 131072 bytes written: OK
+
+Zynq> nand write 10 5E0000 20000
+
+
+
+
+NAND write: device 0 offset 0x5e0000, size 0x20000
+
+ 131072 bytes written: OK
+
+Zynq> nand write 10 600000 20000
+
+
+
+
+NAND write: device 0 offset 0x600000, size 0x20000
+
+ 131072 bytes written: OK
+
+Zynq> Program Operation successful.
+INFO: [Xicom 50-44] Elapsed time = 32 sec.
+Performing Verify Operation...
+nand bad
+
+
+
+
+Device 0 bad blocks:
+
+Zynq> Number of bad blocks = 0
+0%...nand read 10 0 10000
+
+
+
+
+NAND read: device 0 offset 0x0, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 10000 10000
+
+
+
+
+NAND read: device 0 offset 0x10000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 20000 10000
+
+
+
+
+NAND read: device 0 offset 0x20000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 30000 10000
+
+
+
+
+NAND read: device 0 offset 0x30000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 40000 10000
+
+
+
+
+NAND read: device 0 offset 0x40000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 50000 10000
+
+
+
+
+NAND read: device 0 offset 0x50000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 60000 10000
+
+
+
+
+NAND read: device 0 offset 0x60000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 70000 10000
+
+
+
+
+NAND read: device 0 offset 0x70000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 80000 10000
+
+
+
+
+NAND read: device 0 offset 0x80000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 90000 10000
+
+
+
+
+NAND read: device 0 offset 0x90000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> 10%...nand read 10 A0000 10000
+
+
+
+
+NAND read: device 0 offset 0xa0000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 B0000 10000
+
+
+
+
+NAND read: device 0 offset 0xb0000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 C0000 10000
+
+
+
+
+NAND read: device 0 offset 0xc0000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 D0000 10000
+
+
+
+
+NAND read: device 0 offset 0xd0000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 E0000 10000
+
+
+
+
+NAND read: device 0 offset 0xe0000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 F0000 10000
+
+
+
+
+NAND read: device 0 offset 0xf0000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 100000 10000
+
+
+
+
+NAND read: device 0 offset 0x100000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 110000 10000
+
+
+
+
+NAND read: device 0 offset 0x110000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 120000 10000
+
+
+
+
+NAND read: device 0 offset 0x120000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 130000 10000
+
+
+
+
+NAND read: device 0 offset 0x130000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> 20%...nand read 10 140000 10000
+
+
+
+
+NAND read: device 0 offset 0x140000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 150000 10000
+
+
+
+
+NAND read: device 0 offset 0x150000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 160000 10000
+
+
+
+
+NAND read: device 0 offset 0x160000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 170000 10000
+
+
+
+
+NAND read: device 0 offset 0x170000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 180000 10000
+
+
+
+
+NAND read: device 0 offset 0x180000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 190000 10000
+
+
+
+
+NAND read: device 0 offset 0x190000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 1A0000 10000
+
+
+
+
+NAND read: device 0 offset 0x1a0000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 1B0000 10000
+
+
+
+
+NAND read: device 0 offset 0x1b0000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 1C0000 10000
+
+
+
+
+NAND read: device 0 offset 0x1c0000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 1D0000 10000
+
+
+
+
+NAND read: device 0 offset 0x1d0000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> 30%...nand read 10 1E0000 10000
+
+
+
+
+NAND read: device 0 offset 0x1e0000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 1F0000 10000
+
+
+
+
+NAND read: device 0 offset 0x1f0000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 200000 10000
+
+
+
+
+NAND read: device 0 offset 0x200000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 210000 10000
+
+
+
+
+NAND read: device 0 offset 0x210000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 220000 10000
+
+
+
+
+NAND read: device 0 offset 0x220000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 230000 10000
+
+
+
+
+NAND read: device 0 offset 0x230000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 240000 10000
+
+
+
+
+NAND read: device 0 offset 0x240000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 250000 10000
+
+
+
+
+NAND read: device 0 offset 0x250000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 260000 10000
+
+
+
+
+NAND read: device 0 offset 0x260000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> 40%...nand read 10 270000 10000
+
+
+
+
+NAND read: device 0 offset 0x270000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 280000 10000
+
+
+
+
+NAND read: device 0 offset 0x280000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 290000 10000
+
+
+
+
+NAND read: device 0 offset 0x290000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 2A0000 10000
+
+
+
+
+NAND read: device 0 offset 0x2a0000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 2B0000 10000
+
+
+
+
+NAND read: device 0 offset 0x2b0000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 2C0000 10000
+
+
+
+
+NAND read: device 0 offset 0x2c0000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 2D0000 10000
+
+
+
+
+NAND read: device 0 offset 0x2d0000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 2E0000 10000
+
+
+
+
+NAND read: device 0 offset 0x2e0000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 2F0000 10000
+
+
+
+
+NAND read: device 0 offset 0x2f0000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 300000 10000
+
+
+
+
+NAND read: device 0 offset 0x300000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> 50%...nand read 10 310000 10000
+
+
+
+
+NAND read: device 0 offset 0x310000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 320000 10000
+
+
+
+
+NAND read: device 0 offset 0x320000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 330000 10000
+
+
+
+
+NAND read: device 0 offset 0x330000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 340000 10000
+
+
+
+
+NAND read: device 0 offset 0x340000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 350000 10000
+
+
+
+
+NAND read: device 0 offset 0x350000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 360000 10000
+
+
+
+
+NAND read: device 0 offset 0x360000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 370000 10000
+
+
+
+
+NAND read: device 0 offset 0x370000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 380000 10000
+
+
+
+
+NAND read: device 0 offset 0x380000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 390000 10000
+
+
+
+
+NAND read: device 0 offset 0x390000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 3A0000 10000
+
+
+
+
+NAND read: device 0 offset 0x3a0000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> 60%...nand read 10 3B0000 10000
+
+
+
+
+NAND read: device 0 offset 0x3b0000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 3C0000 10000
+
+
+
+
+NAND read: device 0 offset 0x3c0000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 3D0000 10000
+
+
+
+
+NAND read: device 0 offset 0x3d0000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 3E0000 10000
+
+
+
+
+NAND read: device 0 offset 0x3e0000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 3F0000 10000
+
+
+
+
+NAND read: device 0 offset 0x3f0000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 400000 10000
+
+
+
+
+NAND read: device 0 offset 0x400000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 410000 10000
+
+
+
+
+NAND read: device 0 offset 0x410000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 420000 10000
+
+
+
+
+NAND read: device 0 offset 0x420000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 430000 10000
+
+
+
+
+NAND read: device 0 offset 0x430000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> 70%...nand read 10 440000 10000
+
+
+
+
+NAND read: device 0 offset 0x440000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 450000 10000
+
+
+
+
+NAND read: device 0 offset 0x450000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 460000 10000
+
+
+
+
+NAND read: device 0 offset 0x460000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 470000 10000
+
+
+
+
+NAND read: device 0 offset 0x470000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 480000 10000
+
+
+
+
+NAND read: device 0 offset 0x480000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 490000 10000
+
+
+
+
+NAND read: device 0 offset 0x490000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 4A0000 10000
+
+
+
+
+NAND read: device 0 offset 0x4a0000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 4B0000 10000
+
+
+
+
+NAND read: device 0 offset 0x4b0000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 4C0000 10000
+
+
+
+
+NAND read: device 0 offset 0x4c0000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 4D0000 10000
+
+
+
+
+NAND read: device 0 offset 0x4d0000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> 80%...nand read 10 4E0000 10000
+
+
+
+
+NAND read: device 0 offset 0x4e0000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 4F0000 10000
+
+
+
+
+NAND read: device 0 offset 0x4f0000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 500000 10000
+
+
+
+
+NAND read: device 0 offset 0x500000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 510000 10000
+
+
+
+
+NAND read: device 0 offset 0x510000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 520000 10000
+
+
+
+
+NAND read: device 0 offset 0x520000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 530000 10000
+
+
+
+
+NAND read: device 0 offset 0x530000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 540000 10000
+
+
+
+
+NAND read: device 0 offset 0x540000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 550000 10000
+
+
+
+
+NAND read: device 0 offset 0x550000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 560000 10000
+
+
+
+
+NAND read: device 0 offset 0x560000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 570000 10000
+
+
+
+
+NAND read: device 0 offset 0x570000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> 90%...nand read 10 580000 10000
+
+
+
+
+NAND read: device 0 offset 0x580000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 590000 10000
+
+
+
+
+NAND read: device 0 offset 0x590000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 5A0000 10000
+
+
+
+
+NAND read: device 0 offset 0x5a0000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 5B0000 10000
+
+
+
+
+NAND read: device 0 offset 0x5b0000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 5C0000 10000
+
+
+
+
+NAND read: device 0 offset 0x5c0000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 5D0000 10000
+
+
+
+
+NAND read: device 0 offset 0x5d0000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 5E0000 10000
+
+
+
+
+NAND read: device 0 offset 0x5e0000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 5F0000 10000
+
+
+
+
+NAND read: device 0 offset 0x5f0000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> nand read 10 600000 10000
+
+
+
+
+NAND read: device 0 offset 0x600000, size 0x10000
+
+ 65536 bytes read: OK
+
+Zynq> cmp.b 10 10010 10000
+
+
+Total of 65536 byte(s) were the same
+
+Zynq> 100%
+nand read 10 610000 FA50
+
+
+
+
+NAND read: device 0 offset 0x610000, size 0xfa50
+
+ 64080 bytes read: OK
+
+Zynq> cmp.b 10 10010 FA50
+
+
+Total of 64080 byte(s) were the same
+
+Zynq> INFO: [Xicom 50-44] Elapsed time = 54 sec.
+Verify Operation successful.
+
+Flash Operation Successful

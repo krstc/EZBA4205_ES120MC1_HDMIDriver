@@ -1,0 +1,506 @@
+{
+    "ltx_root": {
+        "version": 4,
+        "minor": 0,
+        "ltx_data": [
+            {
+                "name": "EDA_PROBESET",
+                "active": true,
+                "debug_cores": [
+                    {
+                        "type": "XSDB_V3",
+                        "name": "dbg_hub",
+                        "spec": "labtools_xsdbm_v3",
+                        "clk_input_freq_hz": "50000000"
+                    },
+                    {
+                        "type": "ILA_V3",
+                        "name": "edid_ila",
+                        "spec": "labtools_ila_v6",
+                        "ipName": "ila",
+                        "core_location": {
+                            "user_chain": 1,
+                            "slave_index": 0,
+                            "bscan_switch_index": 0
+                        },
+                        "uuid": "F306C312A29157C98F18A92CC0D5C4A2",
+                        "pins": [
+                            {
+                                "name": "probe0",
+                                "id": 0,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 0,
+                                "nets": [
+                                    {
+                                        "name": "cfg_failed",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe0",
+                                "id": 1,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 1,
+                                "rightIndex": 1,
+                                "portIndex": 0,
+                                "nets": [
+                                    {
+                                        "name": "cfg_done",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe1",
+                                "id": 2,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 8,
+                                "portIndex": 1,
+                                "nets": [
+                                    {
+                                        "name": "hdmi_tmds_q7",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "hdmi_tmds_q7[15]"
+                                            },
+                                            {
+                                                "name": "hdmi_tmds_q7[14]"
+                                            },
+                                            {
+                                                "name": "hdmi_tmds_q7[13]"
+                                            },
+                                            {
+                                                "name": "hdmi_tmds_q7[12]"
+                                            },
+                                            {
+                                                "name": "hdmi_tmds_q7[11]"
+                                            },
+                                            {
+                                                "name": "hdmi_tmds_q7[10]"
+                                            },
+                                            {
+                                                "name": "hdmi_tmds_q7[9]"
+                                            },
+                                            {
+                                                "name": "hdmi_tmds_q7[8]"
+                                            },
+                                            {
+                                                "name": "hdmi_tmds_q7[7]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe2",
+                                "id": 3,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 7,
+                                "portIndex": 2,
+                                "nets": [
+                                    {
+                                        "name": "hdmi_status_byte",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "hdmi_status_byte[7]"
+                                            },
+                                            {
+                                                "name": "hdmi_status_byte[6]"
+                                            },
+                                            {
+                                                "name": "hdmi_status_byte[5]"
+                                            },
+                                            {
+                                                "name": "hdmi_status_byte[4]"
+                                            },
+                                            {
+                                                "name": "hdmi_status_byte[3]"
+                                            },
+                                            {
+                                                "name": "hdmi_status_byte[2]"
+                                            },
+                                            {
+                                                "name": "hdmi_status_byte[1]"
+                                            },
+                                            {
+                                                "name": "hdmi_status_byte[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe2",
+                                "id": 4,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 8,
+                                "rightIndex": 8,
+                                "portIndex": 2,
+                                "nets": [
+                                    {
+                                        "name": "hdmi_frequency_valid",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe2",
+                                "id": 5,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 9,
+                                "rightIndex": 9,
+                                "portIndex": 2,
+                                "nets": [
+                                    {
+                                        "name": "edid_verified",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe3",
+                                "id": 6,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 16,
+                                "portIndex": 3,
+                                "nets": [
+                                    {
+                                        "name": "receiver_debug_data",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "receiver_debug_data[16]"
+                                            },
+                                            {
+                                                "name": "receiver_debug_data[15]"
+                                            },
+                                            {
+                                                "name": "receiver_debug_data[14]"
+                                            },
+                                            {
+                                                "name": "receiver_debug_data[13]"
+                                            },
+                                            {
+                                                "name": "receiver_debug_data[12]"
+                                            },
+                                            {
+                                                "name": "receiver_debug_data[11]"
+                                            },
+                                            {
+                                                "name": "receiver_debug_data[10]"
+                                            },
+                                            {
+                                                "name": "receiver_debug_data[9]"
+                                            },
+                                            {
+                                                "name": "receiver_debug_data[8]"
+                                            },
+                                            {
+                                                "name": "receiver_debug_data[7]"
+                                            },
+                                            {
+                                                "name": "receiver_debug_data[6]"
+                                            },
+                                            {
+                                                "name": "receiver_debug_data[5]"
+                                            },
+                                            {
+                                                "name": "receiver_debug_data[4]"
+                                            },
+                                            {
+                                                "name": "receiver_debug_data[3]"
+                                            },
+                                            {
+                                                "name": "receiver_debug_data[2]"
+                                            },
+                                            {
+                                                "name": "receiver_debug_data[1]"
+                                            },
+                                            {
+                                                "name": "receiver_debug_data[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe4",
+                                "id": 7,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 4,
+                                "nets": [
+                                    {
+                                        "name": "hdmi_rate_valid",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe4",
+                                "id": 8,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 1,
+                                "rightIndex": 1,
+                                "portIndex": 4,
+                                "nets": [
+                                    {
+                                        "name": "hdmi_valid_sync",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "hdmi_valid_sync[1]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe4",
+                                "id": 9,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 2,
+                                "rightIndex": 5,
+                                "portIndex": 4,
+                                "nets": [
+                                    {
+                                        "name": "receiver_debug_sync1",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "receiver_debug_sync1[3]"
+                                            },
+                                            {
+                                                "name": "receiver_debug_sync1[2]"
+                                            },
+                                            {
+                                                "name": "receiver_debug_sync1[1]"
+                                            },
+                                            {
+                                                "name": "receiver_debug_sync1[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe4",
+                                "id": 10,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 6,
+                                "rightIndex": 8,
+                                "portIndex": 4,
+                                "nets": [
+                                    {
+                                        "name": "receiver_debug_slot",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "receiver_debug_slot[9]"
+                                            },
+                                            {
+                                                "name": "receiver_debug_slot[8]"
+                                            },
+                                            {
+                                                "name": "receiver_debug_slot[7]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "VIO_V2",
+                        "name": "receiver_vio",
+                        "spec": "labtools_vio_v3",
+                        "ipName": "vio",
+                        "core_location": {
+                            "user_chain": 1,
+                            "slave_index": 1,
+                            "bscan_switch_index": 0
+                        },
+                        "uuid": "B068BCE33FC25D7EA3DC872C471877B0",
+                        "pins": [
+                            {
+                                "name": "probe_in0",
+                                "id": 11,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 9,
+                                "portIndex": 0,
+                                "nets": [
+                                    {
+                                        "name": "receiver_debug_response",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "receiver_debug_response[9]"
+                                            },
+                                            {
+                                                "name": "receiver_debug_response[8]"
+                                            },
+                                            {
+                                                "name": "receiver_debug_response[7]"
+                                            },
+                                            {
+                                                "name": "receiver_debug_response[6]"
+                                            },
+                                            {
+                                                "name": "receiver_debug_response[5]"
+                                            },
+                                            {
+                                                "name": "receiver_debug_response[4]"
+                                            },
+                                            {
+                                                "name": "receiver_debug_response[3]"
+                                            },
+                                            {
+                                                "name": "receiver_debug_response[2]"
+                                            },
+                                            {
+                                                "name": "receiver_debug_response[1]"
+                                            },
+                                            {
+                                                "name": "receiver_debug_response[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_out0",
+                                "id": 12,
+                                "type": "DATA",
+                                "direction": "OUT",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 25,
+                                "portIndex": 0,
+                                "nets": [
+                                    {
+                                        "name": "receiver_debug_command",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "receiver_debug_command[25]"
+                                            },
+                                            {
+                                                "name": "receiver_debug_command[24]"
+                                            },
+                                            {
+                                                "name": "receiver_debug_command[23]"
+                                            },
+                                            {
+                                                "name": "receiver_debug_command[22]"
+                                            },
+                                            {
+                                                "name": "receiver_debug_command[21]"
+                                            },
+                                            {
+                                                "name": "receiver_debug_command[20]"
+                                            },
+                                            {
+                                                "name": "receiver_debug_command[19]"
+                                            },
+                                            {
+                                                "name": "receiver_debug_command[18]"
+                                            },
+                                            {
+                                                "name": "receiver_debug_command[17]"
+                                            },
+                                            {
+                                                "name": "receiver_debug_command[16]"
+                                            },
+                                            {
+                                                "name": "receiver_debug_command[15]"
+                                            },
+                                            {
+                                                "name": "receiver_debug_command[14]"
+                                            },
+                                            {
+                                                "name": "receiver_debug_command[13]"
+                                            },
+                                            {
+                                                "name": "receiver_debug_command[12]"
+                                            },
+                                            {
+                                                "name": "receiver_debug_command[11]"
+                                            },
+                                            {
+                                                "name": "receiver_debug_command[10]"
+                                            },
+                                            {
+                                                "name": "receiver_debug_command[9]"
+                                            },
+                                            {
+                                                "name": "receiver_debug_command[8]"
+                                            },
+                                            {
+                                                "name": "receiver_debug_command[7]"
+                                            },
+                                            {
+                                                "name": "receiver_debug_command[6]"
+                                            },
+                                            {
+                                                "name": "receiver_debug_command[5]"
+                                            },
+                                            {
+                                                "name": "receiver_debug_command[4]"
+                                            },
+                                            {
+                                                "name": "receiver_debug_command[3]"
+                                            },
+                                            {
+                                                "name": "receiver_debug_command[2]"
+                                            },
+                                            {
+                                                "name": "receiver_debug_command[1]"
+                                            },
+                                            {
+                                                "name": "receiver_debug_command[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

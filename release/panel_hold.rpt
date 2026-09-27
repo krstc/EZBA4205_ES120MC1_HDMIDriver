@@ -1,0 +1,1089 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2026.1 (win64) Build 6511674 Tue Jun 16 11:02:23 MDT 2026
+| Date         : Fri Sep 25 00:22:50 2026
+| Host         : kr-x1nano-gen2 running 64-bit major release  (build 9200)
+| Command      : report_timing -to [get_ports {EPD_DOUT[*]}] -delay_type min -max_paths 16 -file C:/Users/kongrong/Desktop/fpga/eink/build/text_local_gc16_idle_full_20260925/panel_hold.rpt
+| Design       : eink_controller_es120mc1
+| Device       : 7z010-clg400
+| Speed File   : -1  PRODUCTION 1.12 2019-11-22
+| Design State : Physopt postRoute
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             3.221ns  (arrival time - required time)
+  Source:                 display_manager/data_mgr/t_din_reg[5]/C
+                            (falling edge-triggered cell FDCE clocked by epd_clk_mmcm  {rise@0.000ns fall@11.346ns period=22.692ns})
+  Destination:            EPD_DOUT[11]
+                            (output port clocked by EPD_SDCK  {rise@0.000ns fall@11.346ns period=22.692ns})
+  Path Group:             EPD_SDCK
+  Path Type:              Min at Fast Process Corner
+  Requirement:            -11.346ns  (EPD_SDCK rise@0.000ns - epd_clk_mmcm fall@11.346ns)
+  Data Path Delay:        1.895ns  (logic 1.415ns (74.678%)  route 0.480ns (25.322%))
+  Logic Levels:           2  (LUT4=1 OBUF=1)
+  Output Delay:           -8.000ns
+  Clock Path Skew:        1.835ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    3.024ns
+    Source Clock Delay      (SCD):    0.926ns = ( 12.272 - 11.346 ) 
+    Clock Pessimism Removal (CPR):    0.263ns
+  Clock Uncertainty:      0.185ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.363ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock epd_clk_mmcm fall edge)
+                                                     11.346    11.346 f  <hidden>
+    PS7_X0Y0             PS7                          0.000    11.346 f  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
+                         net (fo=1, routed)           0.315    11.661    frame_processor/ps_system/ps_system_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
+    BUFGCTRL_X0Y4        BUFG (Prop_bufg_I_O)         0.026    11.687 f  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
+                         net (fo=562, routed)         0.546    12.233    clock_pll/CLK_50M
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.053    11.179 f  clock_pll/u_mmcm/CLKOUT0
+                         net (fo=1, routed)           0.482    11.661    clock_pll/epd_clk_mmcm
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    11.687 f  clock_pll/u_epd_buf/O
+                         net (fo=203, routed)         0.585    12.272    display_manager/data_mgr/EPD_XCL_OBUF
+    SLICE_X43Y66         FDCE                                         r  display_manager/data_mgr/t_din_reg[5]/C  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X43Y66         FDCE (Prop_fdce_C_Q)         0.146    12.418 r  display_manager/data_mgr/t_din_reg[5]/Q
+                         net (fo=1, routed)           0.199    12.617    display_manager/data_mgr/t_din[5]
+    SLICE_X42Y64         LUT4 (Prop_lut4_I0_O)        0.045    12.662 r  display_manager/data_mgr/EPD_DOUT_OBUF[11]_inst_i_1/O
+                         net (fo=1, routed)           0.280    12.943    EPD_DOUT_OBUF[11]
+    G19                  OBUF (Prop_obuf_I_O)         1.224    14.167 r  EPD_DOUT_OBUF[11]_inst/O
+                         net (fo=0)                   0.000    14.167    EPD_DOUT[11]
+    G19                                                               r  EPD_DOUT[11]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock EPD_SDCK rise edge)
+                                                      0.000     0.000 r  <hidden>
+    PS7_X0Y0             PS7                          0.000     0.000 r  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
+                         net (fo=1, routed)           0.341     0.341    frame_processor/ps_system/ps_system_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
+    BUFGCTRL_X0Y4        BUFG (Prop_bufg_I_O)         0.029     0.370 r  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
+                         net (fo=562, routed)         0.812     1.182    clock_pll/CLK_50M
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.369    -0.187 r  clock_pll/u_mmcm/CLKOUT0
+                         net (fo=1, routed)           0.528     0.341    clock_pll/epd_clk_mmcm
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     0.370 r  clock_pll/u_epd_buf/O
+                         net (fo=203, routed)         1.240     1.610    EPD_XCL_OBUF
+    H17                  OBUF (Prop_obuf_I_O)         1.414     3.024 r  EPD_XCL_OBUF_inst/O
+                         net (fo=0)                   0.000     3.024    EPD_XCL
+    H17                                                               r  EPD_XCL
+                         clock pessimism             -0.263     2.761    <hidden>
+                         clock uncertainty            0.185     2.946    <hidden>
+                         output delay                 8.000    10.946    <hidden>
+  -------------------------------------------------------------------
+                         required time                        -10.946    <hidden>
+                         arrival time                          14.166    <hidden>
+  -------------------------------------------------------------------
+                         slack                                  3.221    <hidden>
+
+Slack (MET) :             3.258ns  (arrival time - required time)
+  Source:                 display_manager/data_mgr/t_din_reg[0]/C
+                            (falling edge-triggered cell FDCE clocked by epd_clk_mmcm  {rise@0.000ns fall@11.346ns period=22.692ns})
+  Destination:            EPD_DOUT[14]
+                            (output port clocked by EPD_SDCK  {rise@0.000ns fall@11.346ns period=22.692ns})
+  Path Group:             EPD_SDCK
+  Path Type:              Min at Fast Process Corner
+  Requirement:            -11.346ns  (EPD_SDCK rise@0.000ns - epd_clk_mmcm fall@11.346ns)
+  Data Path Delay:        1.938ns  (logic 1.411ns (72.798%)  route 0.527ns (27.202%))
+  Logic Levels:           2  (LUT4=1 OBUF=1)
+  Output Delay:           -8.000ns
+  Clock Path Skew:        1.840ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    3.024ns
+    Source Clock Delay      (SCD):    0.921ns = ( 12.267 - 11.346 ) 
+    Clock Pessimism Removal (CPR):    0.263ns
+  Clock Uncertainty:      0.185ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.363ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock epd_clk_mmcm fall edge)
+                                                     11.346    11.346 f  <hidden>
+    PS7_X0Y0             PS7                          0.000    11.346 f  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
+                         net (fo=1, routed)           0.315    11.661    frame_processor/ps_system/ps_system_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
+    BUFGCTRL_X0Y4        BUFG (Prop_bufg_I_O)         0.026    11.687 f  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
+                         net (fo=562, routed)         0.546    12.233    clock_pll/CLK_50M
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.053    11.179 f  clock_pll/u_mmcm/CLKOUT0
+                         net (fo=1, routed)           0.482    11.661    clock_pll/epd_clk_mmcm
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    11.687 f  clock_pll/u_epd_buf/O
+                         net (fo=203, routed)         0.580    12.267    display_manager/data_mgr/EPD_XCL_OBUF
+    SLICE_X43Y71         FDCE                                         r  display_manager/data_mgr/t_din_reg[0]/C  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X43Y71         FDCE (Prop_fdce_C_Q)         0.146    12.413 r  display_manager/data_mgr/t_din_reg[0]/Q
+                         net (fo=1, routed)           0.208    12.620    display_manager/data_mgr/t_din[0]
+    SLICE_X42Y67         LUT4 (Prop_lut4_I0_O)        0.045    12.665 r  display_manager/data_mgr/EPD_DOUT_OBUF[14]_inst_i_1/O
+                         net (fo=1, routed)           0.320    12.985    EPD_DOUT_OBUF[14]
+    J20                  OBUF (Prop_obuf_I_O)         1.220    14.204 r  EPD_DOUT_OBUF[14]_inst/O
+                         net (fo=0)                   0.000    14.204    EPD_DOUT[14]
+    J20                                                               r  EPD_DOUT[14]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock EPD_SDCK rise edge)
+                                                      0.000     0.000 r  <hidden>
+    PS7_X0Y0             PS7                          0.000     0.000 r  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
+                         net (fo=1, routed)           0.341     0.341    frame_processor/ps_system/ps_system_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
+    BUFGCTRL_X0Y4        BUFG (Prop_bufg_I_O)         0.029     0.370 r  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
+                         net (fo=562, routed)         0.812     1.182    clock_pll/CLK_50M
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.369    -0.187 r  clock_pll/u_mmcm/CLKOUT0
+                         net (fo=1, routed)           0.528     0.341    clock_pll/epd_clk_mmcm
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     0.370 r  clock_pll/u_epd_buf/O
+                         net (fo=203, routed)         1.240     1.610    EPD_XCL_OBUF
+    H17                  OBUF (Prop_obuf_I_O)         1.414     3.024 r  EPD_XCL_OBUF_inst/O
+                         net (fo=0)                   0.000     3.024    EPD_XCL
+    H17                                                               r  EPD_XCL
+                         clock pessimism             -0.263     2.761    <hidden>
+                         clock uncertainty            0.185     2.946    <hidden>
+                         output delay                 8.000    10.946    <hidden>
+  -------------------------------------------------------------------
+                         required time                        -10.946    <hidden>
+                         arrival time                          14.204    <hidden>
+  -------------------------------------------------------------------
+                         slack                                  3.258    <hidden>
+
+Slack (MET) :             3.264ns  (arrival time - required time)
+  Source:                 display_manager/data_mgr/t_din_reg[6]/C
+                            (falling edge-triggered cell FDCE clocked by epd_clk_mmcm  {rise@0.000ns fall@11.346ns period=22.692ns})
+  Destination:            EPD_DOUT[8]
+                            (output port clocked by EPD_SDCK  {rise@0.000ns fall@11.346ns period=22.692ns})
+  Path Group:             EPD_SDCK
+  Path Type:              Min at Fast Process Corner
+  Requirement:            -11.346ns  (EPD_SDCK rise@0.000ns - epd_clk_mmcm fall@11.346ns)
+  Data Path Delay:        1.942ns  (logic 1.425ns (73.408%)  route 0.516ns (26.592%))
+  Logic Levels:           2  (LUT4=1 OBUF=1)
+  Output Delay:           -8.000ns
+  Clock Path Skew:        1.839ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    3.024ns
+    Source Clock Delay      (SCD):    0.922ns = ( 12.268 - 11.346 ) 
+    Clock Pessimism Removal (CPR):    0.263ns
+  Clock Uncertainty:      0.185ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.363ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock epd_clk_mmcm fall edge)
+                                                     11.346    11.346 f  <hidden>
+    PS7_X0Y0             PS7                          0.000    11.346 f  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
+                         net (fo=1, routed)           0.315    11.661    frame_processor/ps_system/ps_system_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
+    BUFGCTRL_X0Y4        BUFG (Prop_bufg_I_O)         0.026    11.687 f  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
+                         net (fo=562, routed)         0.546    12.233    clock_pll/CLK_50M
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.053    11.179 f  clock_pll/u_mmcm/CLKOUT0
+                         net (fo=1, routed)           0.482    11.661    clock_pll/epd_clk_mmcm
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    11.687 f  clock_pll/u_epd_buf/O
+                         net (fo=203, routed)         0.581    12.268    display_manager/data_mgr/EPD_XCL_OBUF
+    SLICE_X43Y70         FDCE                                         r  display_manager/data_mgr/t_din_reg[6]/C  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X43Y70         FDCE (Prop_fdce_C_Q)         0.146    12.414 r  display_manager/data_mgr/t_din_reg[6]/Q
+                         net (fo=1, routed)           0.189    12.603    display_manager/data_mgr/t_din[6]
+    SLICE_X43Y71         LUT4 (Prop_lut4_I0_O)        0.045    12.648 r  display_manager/data_mgr/EPD_DOUT_OBUF[8]_inst_i_1/O
+                         net (fo=1, routed)           0.327    12.975    EPD_DOUT_OBUF[8]
+    J18                  OBUF (Prop_obuf_I_O)         1.234    14.210 r  EPD_DOUT_OBUF[8]_inst/O
+                         net (fo=0)                   0.000    14.210    EPD_DOUT[8]
+    J18                                                               r  EPD_DOUT[8]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock EPD_SDCK rise edge)
+                                                      0.000     0.000 r  <hidden>
+    PS7_X0Y0             PS7                          0.000     0.000 r  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
+                         net (fo=1, routed)           0.341     0.341    frame_processor/ps_system/ps_system_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
+    BUFGCTRL_X0Y4        BUFG (Prop_bufg_I_O)         0.029     0.370 r  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
+                         net (fo=562, routed)         0.812     1.182    clock_pll/CLK_50M
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.369    -0.187 r  clock_pll/u_mmcm/CLKOUT0
+                         net (fo=1, routed)           0.528     0.341    clock_pll/epd_clk_mmcm
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     0.370 r  clock_pll/u_epd_buf/O
+                         net (fo=203, routed)         1.240     1.610    EPD_XCL_OBUF
+    H17                  OBUF (Prop_obuf_I_O)         1.414     3.024 r  EPD_XCL_OBUF_inst/O
+                         net (fo=0)                   0.000     3.024    EPD_XCL
+    H17                                                               r  EPD_XCL
+                         clock pessimism             -0.263     2.761    <hidden>
+                         clock uncertainty            0.185     2.946    <hidden>
+                         output delay                 8.000    10.946    <hidden>
+  -------------------------------------------------------------------
+                         required time                        -10.946    <hidden>
+                         arrival time                          14.210    <hidden>
+  -------------------------------------------------------------------
+                         slack                                  3.264    <hidden>
+
+Slack (MET) :             3.296ns  (arrival time - required time)
+  Source:                 display_manager/data_mgr/t_din_reg[1]/C
+                            (falling edge-triggered cell FDCE clocked by epd_clk_mmcm  {rise@0.000ns fall@11.346ns period=22.692ns})
+  Destination:            EPD_DOUT[15]
+                            (output port clocked by EPD_SDCK  {rise@0.000ns fall@11.346ns period=22.692ns})
+  Path Group:             EPD_SDCK
+  Path Type:              Min at Fast Process Corner
+  Requirement:            -11.346ns  (EPD_SDCK rise@0.000ns - epd_clk_mmcm fall@11.346ns)
+  Data Path Delay:        1.975ns  (logic 1.435ns (72.650%)  route 0.540ns (27.350%))
+  Logic Levels:           2  (LUT4=1 OBUF=1)
+  Output Delay:           -8.000ns
+  Clock Path Skew:        1.840ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    3.024ns
+    Source Clock Delay      (SCD):    0.921ns = ( 12.267 - 11.346 ) 
+    Clock Pessimism Removal (CPR):    0.263ns
+  Clock Uncertainty:      0.185ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.363ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock epd_clk_mmcm fall edge)
+                                                     11.346    11.346 f  <hidden>
+    PS7_X0Y0             PS7                          0.000    11.346 f  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
+                         net (fo=1, routed)           0.315    11.661    frame_processor/ps_system/ps_system_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
+    BUFGCTRL_X0Y4        BUFG (Prop_bufg_I_O)         0.026    11.687 f  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
+                         net (fo=562, routed)         0.546    12.233    clock_pll/CLK_50M
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.053    11.179 f  clock_pll/u_mmcm/CLKOUT0
+                         net (fo=1, routed)           0.482    11.661    clock_pll/epd_clk_mmcm
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    11.687 f  clock_pll/u_epd_buf/O
+                         net (fo=203, routed)         0.580    12.267    display_manager/data_mgr/EPD_XCL_OBUF
+    SLICE_X43Y78         FDCE                                         r  display_manager/data_mgr/t_din_reg[1]/C  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X43Y78         FDCE (Prop_fdce_C_Q)         0.146    12.413 r  display_manager/data_mgr/t_din_reg[1]/Q
+                         net (fo=1, routed)           0.260    12.672    display_manager/data_mgr/t_din[1]
+    SLICE_X42Y80         LUT4 (Prop_lut4_I0_O)        0.045    12.717 r  display_manager/data_mgr/EPD_DOUT_OBUF[15]_inst_i_1/O
+                         net (fo=1, routed)           0.280    12.998    EPD_DOUT_OBUF[15]
+    K19                  OBUF (Prop_obuf_I_O)         1.244    14.242 r  EPD_DOUT_OBUF[15]_inst/O
+                         net (fo=0)                   0.000    14.242    EPD_DOUT[15]
+    K19                                                               r  EPD_DOUT[15]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock EPD_SDCK rise edge)
+                                                      0.000     0.000 r  <hidden>
+    PS7_X0Y0             PS7                          0.000     0.000 r  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
+                         net (fo=1, routed)           0.341     0.341    frame_processor/ps_system/ps_system_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
+    BUFGCTRL_X0Y4        BUFG (Prop_bufg_I_O)         0.029     0.370 r  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
+                         net (fo=562, routed)         0.812     1.182    clock_pll/CLK_50M
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.369    -0.187 r  clock_pll/u_mmcm/CLKOUT0
+                         net (fo=1, routed)           0.528     0.341    clock_pll/epd_clk_mmcm
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     0.370 r  clock_pll/u_epd_buf/O
+                         net (fo=203, routed)         1.240     1.610    EPD_XCL_OBUF
+    H17                  OBUF (Prop_obuf_I_O)         1.414     3.024 r  EPD_XCL_OBUF_inst/O
+                         net (fo=0)                   0.000     3.024    EPD_XCL
+    H17                                                               r  EPD_XCL
+                         clock pessimism             -0.263     2.761    <hidden>
+                         clock uncertainty            0.185     2.946    <hidden>
+                         output delay                 8.000    10.946    <hidden>
+  -------------------------------------------------------------------
+                         required time                        -10.946    <hidden>
+                         arrival time                          14.241    <hidden>
+  -------------------------------------------------------------------
+                         slack                                  3.296    <hidden>
+
+Slack (MET) :             3.312ns  (arrival time - required time)
+  Source:                 display_manager/init_drive_fall_reg[1]/C
+                            (falling edge-triggered cell FDCE clocked by epd_clk_mmcm  {rise@0.000ns fall@11.346ns period=22.692ns})
+  Destination:            EPD_DOUT[13]
+                            (output port clocked by EPD_SDCK  {rise@0.000ns fall@11.346ns period=22.692ns})
+  Path Group:             EPD_SDCK
+  Path Type:              Min at Fast Process Corner
+  Requirement:            -11.346ns  (EPD_SDCK rise@0.000ns - epd_clk_mmcm fall@11.346ns)
+  Data Path Delay:        1.994ns  (logic 1.435ns (71.999%)  route 0.558ns (28.001%))
+  Logic Levels:           2  (LUT4=1 OBUF=1)
+  Output Delay:           -8.000ns
+  Clock Path Skew:        1.842ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    3.024ns
+    Source Clock Delay      (SCD):    0.919ns = ( 12.265 - 11.346 ) 
+    Clock Pessimism Removal (CPR):    0.263ns
+  Clock Uncertainty:      0.185ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.363ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock epd_clk_mmcm fall edge)
+                                                     11.346    11.346 f  <hidden>
+    PS7_X0Y0             PS7                          0.000    11.346 f  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
+                         net (fo=1, routed)           0.315    11.661    frame_processor/ps_system/ps_system_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
+    BUFGCTRL_X0Y4        BUFG (Prop_bufg_I_O)         0.026    11.687 f  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
+                         net (fo=562, routed)         0.546    12.233    clock_pll/CLK_50M
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.053    11.179 f  clock_pll/u_mmcm/CLKOUT0
+                         net (fo=1, routed)           0.482    11.661    clock_pll/epd_clk_mmcm
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    11.687 f  clock_pll/u_epd_buf/O
+                         net (fo=203, routed)         0.578    12.265    display_manager/EPD_XCL_OBUF
+    SLICE_X43Y76         FDCE                                         r  display_manager/init_drive_fall_reg[1]/C  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X43Y76         FDCE (Prop_fdce_C_Q)         0.146    12.411 r  display_manager/init_drive_fall_reg[1]/Q
+                         net (fo=8, routed)           0.218    12.629    display_manager/data_mgr/EPD_DOUT[15][1]
+    SLICE_X43Y77         LUT4 (Prop_lut4_I2_O)        0.045    12.674 r  display_manager/data_mgr/EPD_DOUT_OBUF[13]_inst_i_1/O
+                         net (fo=1, routed)           0.340    13.014    EPD_DOUT_OBUF[13]
+    K18                  OBUF (Prop_obuf_I_O)         1.244    14.258 r  EPD_DOUT_OBUF[13]_inst/O
+                         net (fo=0)                   0.000    14.258    EPD_DOUT[13]
+    K18                                                               r  EPD_DOUT[13]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock EPD_SDCK rise edge)
+                                                      0.000     0.000 r  <hidden>
+    PS7_X0Y0             PS7                          0.000     0.000 r  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
+                         net (fo=1, routed)           0.341     0.341    frame_processor/ps_system/ps_system_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
+    BUFGCTRL_X0Y4        BUFG (Prop_bufg_I_O)         0.029     0.370 r  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
+                         net (fo=562, routed)         0.812     1.182    clock_pll/CLK_50M
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.369    -0.187 r  clock_pll/u_mmcm/CLKOUT0
+                         net (fo=1, routed)           0.528     0.341    clock_pll/epd_clk_mmcm
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     0.370 r  clock_pll/u_epd_buf/O
+                         net (fo=203, routed)         1.240     1.610    EPD_XCL_OBUF
+    H17                  OBUF (Prop_obuf_I_O)         1.414     3.024 r  EPD_XCL_OBUF_inst/O
+                         net (fo=0)                   0.000     3.024    EPD_XCL
+    H17                                                               r  EPD_XCL
+                         clock pessimism             -0.263     2.761    <hidden>
+                         clock uncertainty            0.185     2.946    <hidden>
+                         output delay                 8.000    10.946    <hidden>
+  -------------------------------------------------------------------
+                         required time                        -10.946    <hidden>
+                         arrival time                          14.258    <hidden>
+  -------------------------------------------------------------------
+                         slack                                  3.312    <hidden>
+
+Slack (MET) :             3.325ns  (arrival time - required time)
+  Source:                 display_manager/frame_ctrl/XSTL_reg/C
+                            (falling edge-triggered cell FDPE clocked by epd_clk_mmcm  {rise@0.000ns fall@11.346ns period=22.692ns})
+  Destination:            EPD_DOUT[7]
+                            (output port clocked by EPD_SDCK  {rise@0.000ns fall@11.346ns period=22.692ns})
+  Path Group:             EPD_SDCK
+  Path Type:              Min at Fast Process Corner
+  Requirement:            -11.346ns  (EPD_SDCK rise@0.000ns - epd_clk_mmcm fall@11.346ns)
+  Data Path Delay:        2.007ns  (logic 1.438ns (71.669%)  route 0.569ns (28.331%))
+  Logic Levels:           2  (LUT4=1 OBUF=1)
+  Output Delay:           -8.000ns
+  Clock Path Skew:        1.843ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    3.024ns
+    Source Clock Delay      (SCD):    0.918ns = ( 12.264 - 11.346 ) 
+    Clock Pessimism Removal (CPR):    0.263ns
+  Clock Uncertainty:      0.185ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.363ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock epd_clk_mmcm fall edge)
+                                                     11.346    11.346 f  <hidden>
+    PS7_X0Y0             PS7                          0.000    11.346 f  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
+                         net (fo=1, routed)           0.315    11.661    frame_processor/ps_system/ps_system_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
+    BUFGCTRL_X0Y4        BUFG (Prop_bufg_I_O)         0.026    11.687 f  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
+                         net (fo=562, routed)         0.546    12.233    clock_pll/CLK_50M
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.053    11.179 f  clock_pll/u_mmcm/CLKOUT0
+                         net (fo=1, routed)           0.482    11.661    clock_pll/epd_clk_mmcm
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    11.687 f  clock_pll/u_epd_buf/O
+                         net (fo=203, routed)         0.577    12.264    display_manager/frame_ctrl/EPD_XCL_OBUF
+    SLICE_X43Y74         FDPE                                         r  display_manager/frame_ctrl/XSTL_reg/C  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X43Y74         FDPE (Prop_fdpe_C_Q)         0.146    12.410 f  display_manager/frame_ctrl/XSTL_reg/Q
+                         net (fo=89, routed)          0.243    12.652    display_manager/data_mgr/data_cnt_reg[1]_0
+    SLICE_X43Y76         LUT4 (Prop_lut4_I3_O)        0.045    12.697 r  display_manager/data_mgr/EPD_DOUT_OBUF[7]_inst_i_1/O
+                         net (fo=1, routed)           0.326    13.023    EPD_DOUT_OBUF[7]
+    K17                  OBUF (Prop_obuf_I_O)         1.247    14.271 r  EPD_DOUT_OBUF[7]_inst/O
+                         net (fo=0)                   0.000    14.271    EPD_DOUT[7]
+    K17                                                               r  EPD_DOUT[7]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock EPD_SDCK rise edge)
+                                                      0.000     0.000 r  <hidden>
+    PS7_X0Y0             PS7                          0.000     0.000 r  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
+                         net (fo=1, routed)           0.341     0.341    frame_processor/ps_system/ps_system_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
+    BUFGCTRL_X0Y4        BUFG (Prop_bufg_I_O)         0.029     0.370 r  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
+                         net (fo=562, routed)         0.812     1.182    clock_pll/CLK_50M
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.369    -0.187 r  clock_pll/u_mmcm/CLKOUT0
+                         net (fo=1, routed)           0.528     0.341    clock_pll/epd_clk_mmcm
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     0.370 r  clock_pll/u_epd_buf/O
+                         net (fo=203, routed)         1.240     1.610    EPD_XCL_OBUF
+    H17                  OBUF (Prop_obuf_I_O)         1.414     3.024 r  EPD_XCL_OBUF_inst/O
+                         net (fo=0)                   0.000     3.024    EPD_XCL
+    H17                                                               r  EPD_XCL
+                         clock pessimism             -0.263     2.761    <hidden>
+                         clock uncertainty            0.185     2.946    <hidden>
+                         output delay                 8.000    10.946    <hidden>
+  -------------------------------------------------------------------
+                         required time                        -10.946    <hidden>
+                         arrival time                          14.271    <hidden>
+  -------------------------------------------------------------------
+                         slack                                  3.325    <hidden>
+
+Slack (MET) :             3.342ns  (arrival time - required time)
+  Source:                 display_manager/frame_ctrl/XSTL_reg/C
+                            (falling edge-triggered cell FDPE clocked by epd_clk_mmcm  {rise@0.000ns fall@11.346ns period=22.692ns})
+  Destination:            EPD_DOUT[6]
+                            (output port clocked by EPD_SDCK  {rise@0.000ns fall@11.346ns period=22.692ns})
+  Path Group:             EPD_SDCK
+  Path Type:              Min at Fast Process Corner
+  Requirement:            -11.346ns  (EPD_SDCK rise@0.000ns - epd_clk_mmcm fall@11.346ns)
+  Data Path Delay:        2.024ns  (logic 1.414ns (69.862%)  route 0.610ns (30.138%))
+  Logic Levels:           2  (LUT4=1 OBUF=1)
+  Output Delay:           -8.000ns
+  Clock Path Skew:        1.843ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    3.024ns
+    Source Clock Delay      (SCD):    0.918ns = ( 12.264 - 11.346 ) 
+    Clock Pessimism Removal (CPR):    0.263ns
+  Clock Uncertainty:      0.185ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.363ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock epd_clk_mmcm fall edge)
+                                                     11.346    11.346 f  <hidden>
+    PS7_X0Y0             PS7                          0.000    11.346 f  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
+                         net (fo=1, routed)           0.315    11.661    frame_processor/ps_system/ps_system_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
+    BUFGCTRL_X0Y4        BUFG (Prop_bufg_I_O)         0.026    11.687 f  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
+                         net (fo=562, routed)         0.546    12.233    clock_pll/CLK_50M
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.053    11.179 f  clock_pll/u_mmcm/CLKOUT0
+                         net (fo=1, routed)           0.482    11.661    clock_pll/epd_clk_mmcm
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    11.687 f  clock_pll/u_epd_buf/O
+                         net (fo=203, routed)         0.577    12.264    display_manager/frame_ctrl/EPD_XCL_OBUF
+    SLICE_X43Y74         FDPE                                         r  display_manager/frame_ctrl/XSTL_reg/C  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X43Y74         FDPE (Prop_fdpe_C_Q)         0.146    12.410 f  display_manager/frame_ctrl/XSTL_reg/Q
+                         net (fo=89, routed)          0.284    12.694    display_manager/data_mgr/data_cnt_reg[1]_0
+    SLICE_X43Y70         LUT4 (Prop_lut4_I3_O)        0.045    12.739 r  display_manager/data_mgr/EPD_DOUT_OBUF[6]_inst_i_1/O
+                         net (fo=1, routed)           0.326    13.065    EPD_DOUT_OBUF[6]
+    F19                  OBUF (Prop_obuf_I_O)         1.223    14.288 r  EPD_DOUT_OBUF[6]_inst/O
+                         net (fo=0)                   0.000    14.288    EPD_DOUT[6]
+    F19                                                               r  EPD_DOUT[6]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock EPD_SDCK rise edge)
+                                                      0.000     0.000 r  <hidden>
+    PS7_X0Y0             PS7                          0.000     0.000 r  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
+                         net (fo=1, routed)           0.341     0.341    frame_processor/ps_system/ps_system_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
+    BUFGCTRL_X0Y4        BUFG (Prop_bufg_I_O)         0.029     0.370 r  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
+                         net (fo=562, routed)         0.812     1.182    clock_pll/CLK_50M
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.369    -0.187 r  clock_pll/u_mmcm/CLKOUT0
+                         net (fo=1, routed)           0.528     0.341    clock_pll/epd_clk_mmcm
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     0.370 r  clock_pll/u_epd_buf/O
+                         net (fo=203, routed)         1.240     1.610    EPD_XCL_OBUF
+    H17                  OBUF (Prop_obuf_I_O)         1.414     3.024 r  EPD_XCL_OBUF_inst/O
+                         net (fo=0)                   0.000     3.024    EPD_XCL
+    H17                                                               r  EPD_XCL
+                         clock pessimism             -0.263     2.761    <hidden>
+                         clock uncertainty            0.185     2.946    <hidden>
+                         output delay                 8.000    10.946    <hidden>
+  -------------------------------------------------------------------
+                         required time                        -10.946    <hidden>
+                         arrival time                          14.288    <hidden>
+  -------------------------------------------------------------------
+                         slack                                  3.342    <hidden>
+
+Slack (MET) :             3.349ns  (arrival time - required time)
+  Source:                 display_manager/frame_ctrl/XSTL_reg/C
+                            (falling edge-triggered cell FDPE clocked by epd_clk_mmcm  {rise@0.000ns fall@11.346ns period=22.692ns})
+  Destination:            EPD_DOUT[4]
+                            (output port clocked by EPD_SDCK  {rise@0.000ns fall@11.346ns period=22.692ns})
+  Path Group:             EPD_SDCK
+  Path Type:              Min at Fast Process Corner
+  Requirement:            -11.346ns  (EPD_SDCK rise@0.000ns - epd_clk_mmcm fall@11.346ns)
+  Data Path Delay:        2.031ns  (logic 1.414ns (69.604%)  route 0.617ns (30.396%))
+  Logic Levels:           2  (LUT4=1 OBUF=1)
+  Output Delay:           -8.000ns
+  Clock Path Skew:        1.843ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    3.024ns
+    Source Clock Delay      (SCD):    0.918ns = ( 12.264 - 11.346 ) 
+    Clock Pessimism Removal (CPR):    0.263ns
+  Clock Uncertainty:      0.185ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.363ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock epd_clk_mmcm fall edge)
+                                                     11.346    11.346 f  <hidden>
+    PS7_X0Y0             PS7                          0.000    11.346 f  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
+                         net (fo=1, routed)           0.315    11.661    frame_processor/ps_system/ps_system_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
+    BUFGCTRL_X0Y4        BUFG (Prop_bufg_I_O)         0.026    11.687 f  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
+                         net (fo=562, routed)         0.546    12.233    clock_pll/CLK_50M
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.053    11.179 f  clock_pll/u_mmcm/CLKOUT0
+                         net (fo=1, routed)           0.482    11.661    clock_pll/epd_clk_mmcm
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    11.687 f  clock_pll/u_epd_buf/O
+                         net (fo=203, routed)         0.577    12.264    display_manager/frame_ctrl/EPD_XCL_OBUF
+    SLICE_X43Y74         FDPE                                         r  display_manager/frame_ctrl/XSTL_reg/C  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X43Y74         FDPE (Prop_fdpe_C_Q)         0.146    12.410 f  display_manager/frame_ctrl/XSTL_reg/Q
+                         net (fo=89, routed)          0.277    12.687    display_manager/data_mgr/data_cnt_reg[1]_0
+    SLICE_X43Y71         LUT4 (Prop_lut4_I3_O)        0.045    12.732 r  display_manager/data_mgr/EPD_DOUT_OBUF[4]_inst_i_1/O
+                         net (fo=1, routed)           0.340    13.072    EPD_DOUT_OBUF[4]
+    F20                  OBUF (Prop_obuf_I_O)         1.223    14.295 r  EPD_DOUT_OBUF[4]_inst/O
+                         net (fo=0)                   0.000    14.295    EPD_DOUT[4]
+    F20                                                               r  EPD_DOUT[4]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock EPD_SDCK rise edge)
+                                                      0.000     0.000 r  <hidden>
+    PS7_X0Y0             PS7                          0.000     0.000 r  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
+                         net (fo=1, routed)           0.341     0.341    frame_processor/ps_system/ps_system_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
+    BUFGCTRL_X0Y4        BUFG (Prop_bufg_I_O)         0.029     0.370 r  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
+                         net (fo=562, routed)         0.812     1.182    clock_pll/CLK_50M
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.369    -0.187 r  clock_pll/u_mmcm/CLKOUT0
+                         net (fo=1, routed)           0.528     0.341    clock_pll/epd_clk_mmcm
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     0.370 r  clock_pll/u_epd_buf/O
+                         net (fo=203, routed)         1.240     1.610    EPD_XCL_OBUF
+    H17                  OBUF (Prop_obuf_I_O)         1.414     3.024 r  EPD_XCL_OBUF_inst/O
+                         net (fo=0)                   0.000     3.024    EPD_XCL
+    H17                                                               r  EPD_XCL
+                         clock pessimism             -0.263     2.761    <hidden>
+                         clock uncertainty            0.185     2.946    <hidden>
+                         output delay                 8.000    10.946    <hidden>
+  -------------------------------------------------------------------
+                         required time                        -10.946    <hidden>
+                         arrival time                          14.295    <hidden>
+  -------------------------------------------------------------------
+                         slack                                  3.349    <hidden>
+
+Slack (MET) :             3.379ns  (arrival time - required time)
+  Source:                 display_manager/init_drive_fall_reg[0]/C
+                            (falling edge-triggered cell FDCE clocked by epd_clk_mmcm  {rise@0.000ns fall@11.346ns period=22.692ns})
+  Destination:            EPD_DOUT[10]
+                            (output port clocked by EPD_SDCK  {rise@0.000ns fall@11.346ns period=22.692ns})
+  Path Group:             EPD_SDCK
+  Path Type:              Min at Fast Process Corner
+  Requirement:            -11.346ns  (EPD_SDCK rise@0.000ns - epd_clk_mmcm fall@11.346ns)
+  Data Path Delay:        2.062ns  (logic 1.409ns (68.339%)  route 0.653ns (31.661%))
+  Logic Levels:           2  (LUT4=1 OBUF=1)
+  Output Delay:           -8.000ns
+  Clock Path Skew:        1.843ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    3.024ns
+    Source Clock Delay      (SCD):    0.918ns = ( 12.264 - 11.346 ) 
+    Clock Pessimism Removal (CPR):    0.263ns
+  Clock Uncertainty:      0.185ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.363ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock epd_clk_mmcm fall edge)
+                                                     11.346    11.346 f  <hidden>
+    PS7_X0Y0             PS7                          0.000    11.346 f  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
+                         net (fo=1, routed)           0.315    11.661    frame_processor/ps_system/ps_system_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
+    BUFGCTRL_X0Y4        BUFG (Prop_bufg_I_O)         0.026    11.687 f  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
+                         net (fo=562, routed)         0.546    12.233    clock_pll/CLK_50M
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.053    11.179 f  clock_pll/u_mmcm/CLKOUT0
+                         net (fo=1, routed)           0.482    11.661    clock_pll/epd_clk_mmcm
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    11.687 f  clock_pll/u_epd_buf/O
+                         net (fo=203, routed)         0.577    12.264    display_manager/EPD_XCL_OBUF
+    SLICE_X43Y74         FDCE                                         r  display_manager/init_drive_fall_reg[0]/C  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X43Y74         FDCE (Prop_fdce_C_Q)         0.146    12.410 r  display_manager/init_drive_fall_reg[0]/Q
+                         net (fo=8, routed)           0.334    12.744    display_manager/data_mgr/EPD_DOUT[15][0]
+    SLICE_X43Y66         LUT4 (Prop_lut4_I2_O)        0.045    12.789 r  display_manager/data_mgr/EPD_DOUT_OBUF[10]_inst_i_1/O
+                         net (fo=1, routed)           0.319    13.107    EPD_DOUT_OBUF[10]
+    H20                  OBUF (Prop_obuf_I_O)         1.218    14.325 r  EPD_DOUT_OBUF[10]_inst/O
+                         net (fo=0)                   0.000    14.325    EPD_DOUT[10]
+    H20                                                               r  EPD_DOUT[10]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock EPD_SDCK rise edge)
+                                                      0.000     0.000 r  <hidden>
+    PS7_X0Y0             PS7                          0.000     0.000 r  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
+                         net (fo=1, routed)           0.341     0.341    frame_processor/ps_system/ps_system_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
+    BUFGCTRL_X0Y4        BUFG (Prop_bufg_I_O)         0.029     0.370 r  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
+                         net (fo=562, routed)         0.812     1.182    clock_pll/CLK_50M
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.369    -0.187 r  clock_pll/u_mmcm/CLKOUT0
+                         net (fo=1, routed)           0.528     0.341    clock_pll/epd_clk_mmcm
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     0.370 r  clock_pll/u_epd_buf/O
+                         net (fo=203, routed)         1.240     1.610    EPD_XCL_OBUF
+    H17                  OBUF (Prop_obuf_I_O)         1.414     3.024 r  EPD_XCL_OBUF_inst/O
+                         net (fo=0)                   0.000     3.024    EPD_XCL
+    H17                                                               r  EPD_XCL
+                         clock pessimism             -0.263     2.761    <hidden>
+                         clock uncertainty            0.185     2.946    <hidden>
+                         output delay                 8.000    10.946    <hidden>
+  -------------------------------------------------------------------
+                         required time                        -10.946    <hidden>
+                         arrival time                          14.325    <hidden>
+  -------------------------------------------------------------------
+                         slack                                  3.379    <hidden>
+
+Slack (MET) :             3.383ns  (arrival time - required time)
+  Source:                 display_manager/data_mgr/t_din_reg[7]/C
+                            (falling edge-triggered cell FDCE clocked by epd_clk_mmcm  {rise@0.000ns fall@11.346ns period=22.692ns})
+  Destination:            EPD_DOUT[9]
+                            (output port clocked by EPD_SDCK  {rise@0.000ns fall@11.346ns period=22.692ns})
+  Path Group:             EPD_SDCK
+  Path Type:              Min at Fast Process Corner
+  Requirement:            -11.346ns  (EPD_SDCK rise@0.000ns - epd_clk_mmcm fall@11.346ns)
+  Data Path Delay:        2.057ns  (logic 1.412ns (68.652%)  route 0.645ns (31.348%))
+  Logic Levels:           2  (LUT4=1 OBUF=1)
+  Output Delay:           -8.000ns
+  Clock Path Skew:        1.835ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    3.024ns
+    Source Clock Delay      (SCD):    0.926ns = ( 12.272 - 11.346 ) 
+    Clock Pessimism Removal (CPR):    0.263ns
+  Clock Uncertainty:      0.185ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.363ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock epd_clk_mmcm fall edge)
+                                                     11.346    11.346 f  <hidden>
+    PS7_X0Y0             PS7                          0.000    11.346 f  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
+                         net (fo=1, routed)           0.315    11.661    frame_processor/ps_system/ps_system_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
+    BUFGCTRL_X0Y4        BUFG (Prop_bufg_I_O)         0.026    11.687 f  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
+                         net (fo=562, routed)         0.546    12.233    clock_pll/CLK_50M
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.053    11.179 f  clock_pll/u_mmcm/CLKOUT0
+                         net (fo=1, routed)           0.482    11.661    clock_pll/epd_clk_mmcm
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    11.687 f  clock_pll/u_epd_buf/O
+                         net (fo=203, routed)         0.585    12.272    display_manager/data_mgr/EPD_XCL_OBUF
+    SLICE_X43Y66         FDCE                                         r  display_manager/data_mgr/t_din_reg[7]/C  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X43Y66         FDCE (Prop_fdce_C_Q)         0.146    12.418 r  display_manager/data_mgr/t_din_reg[7]/Q
+                         net (fo=1, routed)           0.364    12.782    display_manager/data_mgr/t_din[7]
+    SLICE_X43Y63         LUT4 (Prop_lut4_I0_O)        0.045    12.827 r  display_manager/data_mgr/EPD_DOUT_OBUF[9]_inst_i_1/O
+                         net (fo=1, routed)           0.280    13.107    EPD_DOUT_OBUF[9]
+    G20                  OBUF (Prop_obuf_I_O)         1.221    14.329 r  EPD_DOUT_OBUF[9]_inst/O
+                         net (fo=0)                   0.000    14.329    EPD_DOUT[9]
+    G20                                                               r  EPD_DOUT[9]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock EPD_SDCK rise edge)
+                                                      0.000     0.000 r  <hidden>
+    PS7_X0Y0             PS7                          0.000     0.000 r  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
+                         net (fo=1, routed)           0.341     0.341    frame_processor/ps_system/ps_system_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
+    BUFGCTRL_X0Y4        BUFG (Prop_bufg_I_O)         0.029     0.370 r  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
+                         net (fo=562, routed)         0.812     1.182    clock_pll/CLK_50M
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.369    -0.187 r  clock_pll/u_mmcm/CLKOUT0
+                         net (fo=1, routed)           0.528     0.341    clock_pll/epd_clk_mmcm
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     0.370 r  clock_pll/u_epd_buf/O
+                         net (fo=203, routed)         1.240     1.610    EPD_XCL_OBUF
+    H17                  OBUF (Prop_obuf_I_O)         1.414     3.024 r  EPD_XCL_OBUF_inst/O
+                         net (fo=0)                   0.000     3.024    EPD_XCL
+    H17                                                               r  EPD_XCL
+                         clock pessimism             -0.263     2.761    <hidden>
+                         clock uncertainty            0.185     2.946    <hidden>
+                         output delay                 8.000    10.946    <hidden>
+  -------------------------------------------------------------------
+                         required time                        -10.946    <hidden>
+                         arrival time                          14.329    <hidden>
+  -------------------------------------------------------------------
+                         slack                                  3.383    <hidden>
+
+Slack (MET) :             3.397ns  (arrival time - required time)
+  Source:                 display_manager/initializing_fall_reg/C
+                            (falling edge-triggered cell FDCE clocked by epd_clk_mmcm  {rise@0.000ns fall@11.346ns period=22.692ns})
+  Destination:            EPD_DOUT[12]
+                            (output port clocked by EPD_SDCK  {rise@0.000ns fall@11.346ns period=22.692ns})
+  Path Group:             EPD_SDCK
+  Path Type:              Min at Fast Process Corner
+  Requirement:            -11.346ns  (EPD_SDCK rise@0.000ns - epd_clk_mmcm fall@11.346ns)
+  Data Path Delay:        2.080ns  (logic 1.477ns (71.047%)  route 0.602ns (28.953%))
+  Logic Levels:           2  (LUT4=1 OBUF=1)
+  Output Delay:           -8.000ns
+  Clock Path Skew:        1.843ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    3.024ns
+    Source Clock Delay      (SCD):    0.918ns = ( 12.264 - 11.346 ) 
+    Clock Pessimism Removal (CPR):    0.263ns
+  Clock Uncertainty:      0.185ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.363ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock epd_clk_mmcm fall edge)
+                                                     11.346    11.346 f  <hidden>
+    PS7_X0Y0             PS7                          0.000    11.346 f  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
+                         net (fo=1, routed)           0.315    11.661    frame_processor/ps_system/ps_system_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
+    BUFGCTRL_X0Y4        BUFG (Prop_bufg_I_O)         0.026    11.687 f  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
+                         net (fo=562, routed)         0.546    12.233    clock_pll/CLK_50M
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.053    11.179 f  clock_pll/u_mmcm/CLKOUT0
+                         net (fo=1, routed)           0.482    11.661    clock_pll/epd_clk_mmcm
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    11.687 f  clock_pll/u_epd_buf/O
+                         net (fo=203, routed)         0.577    12.264    display_manager/EPD_XCL_OBUF
+    SLICE_X43Y74         FDCE                                         r  display_manager/initializing_fall_reg/C  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X43Y74         FDCE (Prop_fdce_C_Q)         0.133    12.397 r  display_manager/initializing_fall_reg/Q
+                         net (fo=16, routed)          0.207    12.604    display_manager/data_mgr/initializing_fall
+    SLICE_X43Y74         LUT4 (Prop_lut4_I1_O)        0.098    12.702 r  display_manager/data_mgr/EPD_DOUT_OBUF[12]_inst_i_1/O
+                         net (fo=1, routed)           0.395    13.097    EPD_DOUT_OBUF[12]
+    J19                  OBUF (Prop_obuf_I_O)         1.246    14.343 r  EPD_DOUT_OBUF[12]_inst/O
+                         net (fo=0)                   0.000    14.343    EPD_DOUT[12]
+    J19                                                               r  EPD_DOUT[12]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock EPD_SDCK rise edge)
+                                                      0.000     0.000 r  <hidden>
+    PS7_X0Y0             PS7                          0.000     0.000 r  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
+                         net (fo=1, routed)           0.341     0.341    frame_processor/ps_system/ps_system_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
+    BUFGCTRL_X0Y4        BUFG (Prop_bufg_I_O)         0.029     0.370 r  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
+                         net (fo=562, routed)         0.812     1.182    clock_pll/CLK_50M
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.369    -0.187 r  clock_pll/u_mmcm/CLKOUT0
+                         net (fo=1, routed)           0.528     0.341    clock_pll/epd_clk_mmcm
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     0.370 r  clock_pll/u_epd_buf/O
+                         net (fo=203, routed)         1.240     1.610    EPD_XCL_OBUF
+    H17                  OBUF (Prop_obuf_I_O)         1.414     3.024 r  EPD_XCL_OBUF_inst/O
+                         net (fo=0)                   0.000     3.024    EPD_XCL
+    H17                                                               r  EPD_XCL
+                         clock pessimism             -0.263     2.761    <hidden>
+                         clock uncertainty            0.185     2.946    <hidden>
+                         output delay                 8.000    10.946    <hidden>
+  -------------------------------------------------------------------
+                         required time                        -10.946    <hidden>
+                         arrival time                          14.343    <hidden>
+  -------------------------------------------------------------------
+                         slack                                  3.397    <hidden>
+
+Slack (MET) :             3.404ns  (arrival time - required time)
+  Source:                 display_manager/data_mgr/t_din_reg[13]/C
+                            (falling edge-triggered cell FDCE clocked by epd_clk_mmcm  {rise@0.000ns fall@11.346ns period=22.692ns})
+  Destination:            EPD_DOUT[3]
+                            (output port clocked by EPD_SDCK  {rise@0.000ns fall@11.346ns period=22.692ns})
+  Path Group:             EPD_SDCK
+  Path Type:              Min at Fast Process Corner
+  Requirement:            -11.346ns  (EPD_SDCK rise@0.000ns - epd_clk_mmcm fall@11.346ns)
+  Data Path Delay:        2.082ns  (logic 1.424ns (68.388%)  route 0.658ns (31.612%))
+  Logic Levels:           2  (LUT4=1 OBUF=1)
+  Output Delay:           -8.000ns
+  Clock Path Skew:        1.839ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    3.024ns
+    Source Clock Delay      (SCD):    0.922ns = ( 12.268 - 11.346 ) 
+    Clock Pessimism Removal (CPR):    0.263ns
+  Clock Uncertainty:      0.185ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.363ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock epd_clk_mmcm fall edge)
+                                                     11.346    11.346 f  <hidden>
+    PS7_X0Y0             PS7                          0.000    11.346 f  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
+                         net (fo=1, routed)           0.315    11.661    frame_processor/ps_system/ps_system_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
+    BUFGCTRL_X0Y4        BUFG (Prop_bufg_I_O)         0.026    11.687 f  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
+                         net (fo=562, routed)         0.546    12.233    clock_pll/CLK_50M
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.053    11.179 f  clock_pll/u_mmcm/CLKOUT0
+                         net (fo=1, routed)           0.482    11.661    clock_pll/epd_clk_mmcm
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    11.687 f  clock_pll/u_epd_buf/O
+                         net (fo=203, routed)         0.581    12.268    display_manager/data_mgr/EPD_XCL_OBUF
+    SLICE_X43Y79         FDCE                                         r  display_manager/data_mgr/t_din_reg[13]/C  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X43Y79         FDCE (Prop_fdce_C_Q)         0.146    12.414 r  display_manager/data_mgr/t_din_reg[13]/Q
+                         net (fo=1, routed)           0.378    12.792    display_manager/data_mgr/t_din[13]
+    SLICE_X43Y92         LUT4 (Prop_lut4_I0_O)        0.045    12.837 r  display_manager/data_mgr/EPD_DOUT_OBUF[3]_inst_i_1/O
+                         net (fo=1, routed)           0.280    13.117    EPD_DOUT_OBUF[3]
+    D19                  OBUF (Prop_obuf_I_O)         1.233    14.350 r  EPD_DOUT_OBUF[3]_inst/O
+                         net (fo=0)                   0.000    14.350    EPD_DOUT[3]
+    D19                                                               r  EPD_DOUT[3]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock EPD_SDCK rise edge)
+                                                      0.000     0.000 r  <hidden>
+    PS7_X0Y0             PS7                          0.000     0.000 r  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
+                         net (fo=1, routed)           0.341     0.341    frame_processor/ps_system/ps_system_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
+    BUFGCTRL_X0Y4        BUFG (Prop_bufg_I_O)         0.029     0.370 r  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
+                         net (fo=562, routed)         0.812     1.182    clock_pll/CLK_50M
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.369    -0.187 r  clock_pll/u_mmcm/CLKOUT0
+                         net (fo=1, routed)           0.528     0.341    clock_pll/epd_clk_mmcm
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     0.370 r  clock_pll/u_epd_buf/O
+                         net (fo=203, routed)         1.240     1.610    EPD_XCL_OBUF
+    H17                  OBUF (Prop_obuf_I_O)         1.414     3.024 r  EPD_XCL_OBUF_inst/O
+                         net (fo=0)                   0.000     3.024    EPD_XCL
+    H17                                                               r  EPD_XCL
+                         clock pessimism             -0.263     2.761    <hidden>
+                         clock uncertainty            0.185     2.946    <hidden>
+                         output delay                 8.000    10.946    <hidden>
+  -------------------------------------------------------------------
+                         required time                        -10.946    <hidden>
+                         arrival time                          14.350    <hidden>
+  -------------------------------------------------------------------
+                         slack                                  3.404    <hidden>
+
+Slack (MET) :             3.405ns  (arrival time - required time)
+  Source:                 display_manager/frame_ctrl/XSTL_reg/C
+                            (falling edge-triggered cell FDPE clocked by epd_clk_mmcm  {rise@0.000ns fall@11.346ns period=22.692ns})
+  Destination:            EPD_DOUT[2]
+                            (output port clocked by EPD_SDCK  {rise@0.000ns fall@11.346ns period=22.692ns})
+  Path Group:             EPD_SDCK
+  Path Type:              Min at Fast Process Corner
+  Requirement:            -11.346ns  (EPD_SDCK rise@0.000ns - epd_clk_mmcm fall@11.346ns)
+  Data Path Delay:        2.087ns  (logic 1.422ns (68.129%)  route 0.665ns (31.871%))
+  Logic Levels:           2  (LUT4=1 OBUF=1)
+  Output Delay:           -8.000ns
+  Clock Path Skew:        1.843ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    3.024ns
+    Source Clock Delay      (SCD):    0.918ns = ( 12.264 - 11.346 ) 
+    Clock Pessimism Removal (CPR):    0.263ns
+  Clock Uncertainty:      0.185ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.363ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock epd_clk_mmcm fall edge)
+                                                     11.346    11.346 f  <hidden>
+    PS7_X0Y0             PS7                          0.000    11.346 f  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
+                         net (fo=1, routed)           0.315    11.661    frame_processor/ps_system/ps_system_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
+    BUFGCTRL_X0Y4        BUFG (Prop_bufg_I_O)         0.026    11.687 f  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
+                         net (fo=562, routed)         0.546    12.233    clock_pll/CLK_50M
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.053    11.179 f  clock_pll/u_mmcm/CLKOUT0
+                         net (fo=1, routed)           0.482    11.661    clock_pll/epd_clk_mmcm
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    11.687 f  clock_pll/u_epd_buf/O
+                         net (fo=203, routed)         0.577    12.264    display_manager/frame_ctrl/EPD_XCL_OBUF
+    SLICE_X43Y74         FDPE                                         r  display_manager/frame_ctrl/XSTL_reg/C  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X43Y74         FDPE (Prop_fdpe_C_Q)         0.146    12.410 f  display_manager/frame_ctrl/XSTL_reg/Q
+                         net (fo=89, routed)          0.240    12.649    display_manager/data_mgr/data_cnt_reg[1]_0
+    SLICE_X43Y76         LUT4 (Prop_lut4_I3_O)        0.045    12.694 r  display_manager/data_mgr/EPD_DOUT_OBUF[2]_inst_i_1/O
+                         net (fo=1, routed)           0.425    13.120    EPD_DOUT_OBUF[2]
+    H18                  OBUF (Prop_obuf_I_O)         1.231    14.351 r  EPD_DOUT_OBUF[2]_inst/O
+                         net (fo=0)                   0.000    14.351    EPD_DOUT[2]
+    H18                                                               r  EPD_DOUT[2]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock EPD_SDCK rise edge)
+                                                      0.000     0.000 r  <hidden>
+    PS7_X0Y0             PS7                          0.000     0.000 r  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
+                         net (fo=1, routed)           0.341     0.341    frame_processor/ps_system/ps_system_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
+    BUFGCTRL_X0Y4        BUFG (Prop_bufg_I_O)         0.029     0.370 r  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
+                         net (fo=562, routed)         0.812     1.182    clock_pll/CLK_50M
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.369    -0.187 r  clock_pll/u_mmcm/CLKOUT0
+                         net (fo=1, routed)           0.528     0.341    clock_pll/epd_clk_mmcm
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     0.370 r  clock_pll/u_epd_buf/O
+                         net (fo=203, routed)         1.240     1.610    EPD_XCL_OBUF
+    H17                  OBUF (Prop_obuf_I_O)         1.414     3.024 r  EPD_XCL_OBUF_inst/O
+                         net (fo=0)                   0.000     3.024    EPD_XCL
+    H17                                                               r  EPD_XCL
+                         clock pessimism             -0.263     2.761    <hidden>
+                         clock uncertainty            0.185     2.946    <hidden>
+                         output delay                 8.000    10.946    <hidden>
+  -------------------------------------------------------------------
+                         required time                        -10.946    <hidden>
+                         arrival time                          14.351    <hidden>
+  -------------------------------------------------------------------
+                         slack                                  3.405    <hidden>
+
+Slack (MET) :             3.411ns  (arrival time - required time)
+  Source:                 display_manager/data_mgr/t_din_reg[11]/C
+                            (falling edge-triggered cell FDCE clocked by epd_clk_mmcm  {rise@0.000ns fall@11.346ns period=22.692ns})
+  Destination:            EPD_DOUT[5]
+                            (output port clocked by EPD_SDCK  {rise@0.000ns fall@11.346ns period=22.692ns})
+  Path Group:             EPD_SDCK
+  Path Type:              Min at Fast Process Corner
+  Requirement:            -11.346ns  (EPD_SDCK rise@0.000ns - epd_clk_mmcm fall@11.346ns)
+  Data Path Delay:        2.089ns  (logic 1.443ns (69.071%)  route 0.646ns (30.929%))
+  Logic Levels:           2  (LUT4=1 OBUF=1)
+  Output Delay:           -8.000ns
+  Clock Path Skew:        1.839ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    3.024ns
+    Source Clock Delay      (SCD):    0.922ns = ( 12.268 - 11.346 ) 
+    Clock Pessimism Removal (CPR):    0.263ns
+  Clock Uncertainty:      0.185ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.363ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock epd_clk_mmcm fall edge)
+                                                     11.346    11.346 f  <hidden>
+    PS7_X0Y0             PS7                          0.000    11.346 f  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
+                         net (fo=1, routed)           0.315    11.661    frame_processor/ps_system/ps_system_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
+    BUFGCTRL_X0Y4        BUFG (Prop_bufg_I_O)         0.026    11.687 f  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
+                         net (fo=562, routed)         0.546    12.233    clock_pll/CLK_50M
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.053    11.179 f  clock_pll/u_mmcm/CLKOUT0
+                         net (fo=1, routed)           0.482    11.661    clock_pll/epd_clk_mmcm
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    11.687 f  clock_pll/u_epd_buf/O
+                         net (fo=203, routed)         0.581    12.268    display_manager/data_mgr/EPD_XCL_OBUF
+    SLICE_X42Y79         FDCE                                         r  display_manager/data_mgr/t_din_reg[11]/C  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X42Y79         FDCE (Prop_fdce_C_Q)         0.167    12.435 r  display_manager/data_mgr/t_din_reg[11]/Q
+                         net (fo=1, routed)           0.366    12.801    display_manager/data_mgr/t_din[11]
+    SLICE_X42Y89         LUT4 (Prop_lut4_I0_O)        0.045    12.846 r  display_manager/data_mgr/EPD_DOUT_OBUF[5]_inst_i_1/O
+                         net (fo=1, routed)           0.280    13.126    EPD_DOUT_OBUF[5]
+    E19                  OBUF (Prop_obuf_I_O)         1.231    14.357 r  EPD_DOUT_OBUF[5]_inst/O
+                         net (fo=0)                   0.000    14.357    EPD_DOUT[5]
+    E19                                                               r  EPD_DOUT[5]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock EPD_SDCK rise edge)
+                                                      0.000     0.000 r  <hidden>
+    PS7_X0Y0             PS7                          0.000     0.000 r  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
+                         net (fo=1, routed)           0.341     0.341    frame_processor/ps_system/ps_system_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
+    BUFGCTRL_X0Y4        BUFG (Prop_bufg_I_O)         0.029     0.370 r  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
+                         net (fo=562, routed)         0.812     1.182    clock_pll/CLK_50M
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.369    -0.187 r  clock_pll/u_mmcm/CLKOUT0
+                         net (fo=1, routed)           0.528     0.341    clock_pll/epd_clk_mmcm
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     0.370 r  clock_pll/u_epd_buf/O
+                         net (fo=203, routed)         1.240     1.610    EPD_XCL_OBUF
+    H17                  OBUF (Prop_obuf_I_O)         1.414     3.024 r  EPD_XCL_OBUF_inst/O
+                         net (fo=0)                   0.000     3.024    EPD_XCL
+    H17                                                               r  EPD_XCL
+                         clock pessimism             -0.263     2.761    <hidden>
+                         clock uncertainty            0.185     2.946    <hidden>
+                         output delay                 8.000    10.946    <hidden>
+  -------------------------------------------------------------------
+                         required time                        -10.946    <hidden>
+                         arrival time                          14.357    <hidden>
+  -------------------------------------------------------------------
+                         slack                                  3.411    <hidden>
+
+Slack (MET) :             3.414ns  (arrival time - required time)
+  Source:                 display_manager/data_mgr/t_din_reg[14]/C
+                            (falling edge-triggered cell FDCE clocked by epd_clk_mmcm  {rise@0.000ns fall@11.346ns period=22.692ns})
+  Destination:            EPD_DOUT[0]
+                            (output port clocked by EPD_SDCK  {rise@0.000ns fall@11.346ns period=22.692ns})
+  Path Group:             EPD_SDCK
+  Path Type:              Min at Fast Process Corner
+  Requirement:            -11.346ns  (EPD_SDCK rise@0.000ns - epd_clk_mmcm fall@11.346ns)
+  Data Path Delay:        2.093ns  (logic 1.422ns (67.916%)  route 0.672ns (32.084%))
+  Logic Levels:           2  (LUT4=1 OBUF=1)
+  Output Delay:           -8.000ns
+  Clock Path Skew:        1.840ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    3.024ns
+    Source Clock Delay      (SCD):    0.921ns = ( 12.267 - 11.346 ) 
+    Clock Pessimism Removal (CPR):    0.263ns
+  Clock Uncertainty:      0.185ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.363ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock epd_clk_mmcm fall edge)
+                                                     11.346    11.346 f  <hidden>
+    PS7_X0Y0             PS7                          0.000    11.346 f  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
+                         net (fo=1, routed)           0.315    11.661    frame_processor/ps_system/ps_system_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
+    BUFGCTRL_X0Y4        BUFG (Prop_bufg_I_O)         0.026    11.687 f  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
+                         net (fo=562, routed)         0.546    12.233    clock_pll/CLK_50M
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.053    11.179 f  clock_pll/u_mmcm/CLKOUT0
+                         net (fo=1, routed)           0.482    11.661    clock_pll/epd_clk_mmcm
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    11.687 f  clock_pll/u_epd_buf/O
+                         net (fo=203, routed)         0.580    12.267    display_manager/data_mgr/EPD_XCL_OBUF
+    SLICE_X43Y78         FDCE                                         r  display_manager/data_mgr/t_din_reg[14]/C  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X43Y78         FDCE (Prop_fdce_C_Q)         0.146    12.413 r  display_manager/data_mgr/t_din_reg[14]/Q
+                         net (fo=1, routed)           0.310    12.723    display_manager/data_mgr/t_din[14]
+    SLICE_X43Y85         LUT4 (Prop_lut4_I0_O)        0.045    12.768 r  display_manager/data_mgr/EPD_DOUT_OBUF[0]_inst_i_1/O
+                         net (fo=1, routed)           0.362    13.129    EPD_DOUT_OBUF[0]
+    D20                  OBUF (Prop_obuf_I_O)         1.231    14.360 r  EPD_DOUT_OBUF[0]_inst/O
+                         net (fo=0)                   0.000    14.360    EPD_DOUT[0]
+    D20                                                               r  EPD_DOUT[0]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock EPD_SDCK rise edge)
+                                                      0.000     0.000 r  <hidden>
+    PS7_X0Y0             PS7                          0.000     0.000 r  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
+                         net (fo=1, routed)           0.341     0.341    frame_processor/ps_system/ps_system_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
+    BUFGCTRL_X0Y4        BUFG (Prop_bufg_I_O)         0.029     0.370 r  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
+                         net (fo=562, routed)         0.812     1.182    clock_pll/CLK_50M
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.369    -0.187 r  clock_pll/u_mmcm/CLKOUT0
+                         net (fo=1, routed)           0.528     0.341    clock_pll/epd_clk_mmcm
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     0.370 r  clock_pll/u_epd_buf/O
+                         net (fo=203, routed)         1.240     1.610    EPD_XCL_OBUF
+    H17                  OBUF (Prop_obuf_I_O)         1.414     3.024 r  EPD_XCL_OBUF_inst/O
+                         net (fo=0)                   0.000     3.024    EPD_XCL
+    H17                                                               r  EPD_XCL
+                         clock pessimism             -0.263     2.761    <hidden>
+                         clock uncertainty            0.185     2.946    <hidden>
+                         output delay                 8.000    10.946    <hidden>
+  -------------------------------------------------------------------
+                         required time                        -10.946    <hidden>
+                         arrival time                          14.360    <hidden>
+  -------------------------------------------------------------------
+                         slack                                  3.414    <hidden>
+
+Slack (MET) :             3.417ns  (arrival time - required time)
+  Source:                 display_manager/data_mgr/t_din_reg[15]/C
+                            (falling edge-triggered cell FDCE clocked by epd_clk_mmcm  {rise@0.000ns fall@11.346ns period=22.692ns})
+  Destination:            EPD_DOUT[1]
+                            (output port clocked by EPD_SDCK  {rise@0.000ns fall@11.346ns period=22.692ns})
+  Path Group:             EPD_SDCK
+  Path Type:              Min at Fast Process Corner
+  Requirement:            -11.346ns  (EPD_SDCK rise@0.000ns - epd_clk_mmcm fall@11.346ns)
+  Data Path Delay:        2.095ns  (logic 1.402ns (66.907%)  route 0.693ns (33.093%))
+  Logic Levels:           2  (LUT4=1 OBUF=1)
+  Output Delay:           -8.000ns
+  Clock Path Skew:        1.839ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    3.024ns
+    Source Clock Delay      (SCD):    0.922ns = ( 12.268 - 11.346 ) 
+    Clock Pessimism Removal (CPR):    0.263ns
+  Clock Uncertainty:      0.185ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.363ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock epd_clk_mmcm fall edge)
+                                                     11.346    11.346 f  <hidden>
+    PS7_X0Y0             PS7                          0.000    11.346 f  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
+                         net (fo=1, routed)           0.315    11.661    frame_processor/ps_system/ps_system_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
+    BUFGCTRL_X0Y4        BUFG (Prop_bufg_I_O)         0.026    11.687 f  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
+                         net (fo=562, routed)         0.546    12.233    clock_pll/CLK_50M
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.053    11.179 f  clock_pll/u_mmcm/CLKOUT0
+                         net (fo=1, routed)           0.482    11.661    clock_pll/epd_clk_mmcm
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    11.687 f  clock_pll/u_epd_buf/O
+                         net (fo=203, routed)         0.581    12.268    display_manager/data_mgr/EPD_XCL_OBUF
+    SLICE_X43Y79         FDCE                                         r  display_manager/data_mgr/t_din_reg[15]/C  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X43Y79         FDCE (Prop_fdce_C_Q)         0.146    12.414 r  display_manager/data_mgr/t_din_reg[15]/Q
+                         net (fo=1, routed)           0.363    12.777    display_manager/data_mgr/t_din[15]
+    SLICE_X43Y92         LUT4 (Prop_lut4_I0_O)        0.045    12.822 r  display_manager/data_mgr/EPD_DOUT_OBUF[1]_inst_i_1/O
+                         net (fo=1, routed)           0.331    13.152    EPD_DOUT_OBUF[1]
+    D18                  OBUF (Prop_obuf_I_O)         1.211    14.363 r  EPD_DOUT_OBUF[1]_inst/O
+                         net (fo=0)                   0.000    14.363    EPD_DOUT[1]
+    D18                                                               r  EPD_DOUT[1]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock EPD_SDCK rise edge)
+                                                      0.000     0.000 r  <hidden>
+    PS7_X0Y0             PS7                          0.000     0.000 r  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]
+                         net (fo=1, routed)           0.341     0.341    frame_processor/ps_system/ps_system_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]
+    BUFGCTRL_X0Y4        BUFG (Prop_bufg_I_O)         0.029     0.370 r  frame_processor/ps_system/ps_system_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O
+                         net (fo=562, routed)         0.812     1.182    clock_pll/CLK_50M
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.369    -0.187 r  clock_pll/u_mmcm/CLKOUT0
+                         net (fo=1, routed)           0.528     0.341    clock_pll/epd_clk_mmcm
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     0.370 r  clock_pll/u_epd_buf/O
+                         net (fo=203, routed)         1.240     1.610    EPD_XCL_OBUF
+    H17                  OBUF (Prop_obuf_I_O)         1.414     3.024 r  EPD_XCL_OBUF_inst/O
+                         net (fo=0)                   0.000     3.024    EPD_XCL
+    H17                                                               r  EPD_XCL
+                         clock pessimism             -0.263     2.761    <hidden>
+                         clock uncertainty            0.185     2.946    <hidden>
+                         output delay                 8.000    10.946    <hidden>
+  -------------------------------------------------------------------
+                         required time                        -10.946    <hidden>
+                         arrival time                          14.363    <hidden>
+  -------------------------------------------------------------------
+                         slack                                  3.417    <hidden>
+
+
+
+
