@@ -1,0 +1,6 @@
+the_ROM_image:
+{
+    [bootloader] fsbl.elf
+    fpga.bit
+    frame_buffer_ddr15.elf
+}
